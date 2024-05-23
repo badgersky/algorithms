@@ -53,3 +53,14 @@ void copy_arr(int* tab1, int* tab2, int n) {
 int* allocate_mem( int n) {
 	return (int*)malloc(n * sizeof(int));
 }
+
+int min(int* tab, int n, int j) {
+	int min = tab[j], min_i = j;
+	for (int i = j + 1; i < n; i++) {
+		if (tab[i] < min) {
+			min = tab[i];
+			min_i = i;
+		}
+	}
+	return min_i;
+}

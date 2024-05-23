@@ -5,7 +5,7 @@
 int main() {
 	srand(time(0));
 
-	const int size = 10000;
+	const int size = 50000;
 	int *tab = allocate_mem(size);
 	int *tab_asc = allocate_mem(size);
 	int *tab_desc = allocate_mem(size);
@@ -19,6 +19,7 @@ int main() {
 
 	test_bubble_sort(tab_asc, tab_desc, tab, size);
 	test_insertion_sort(tab_asc, tab_desc, tab, size);
+	test_selection_sort(tab_asc, tab_desc, tab, size);
 
 	free(tab);
 	free(tab_asc);

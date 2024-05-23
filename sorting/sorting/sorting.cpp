@@ -28,3 +28,14 @@ void insertion_sort(int* tab, int n) {
 		tab[j + 1] = num;
 	}
 }
+
+void selection_sort(int* tab, int n) {
+	int min_i, temp;
+
+	for (int i = 0; i < n; i++) {
+		min_i = min(tab, n, i);
+		temp = tab[min_i];
+		tab[min_i] = tab[i];
+		tab[i] = temp;
+	}
+}
