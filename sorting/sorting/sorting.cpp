@@ -39,3 +39,27 @@ void selection_sort(int* tab, int n) {
 		tab[i] = temp;
 	}
 }
+
+void quick_sort(int* tab, int n, int m) {
+	if (n >= m) return;
+
+	int i = n, j = m, v, temp;
+	v = tab[(i + j) / 2];
+
+	 do {
+		while (tab[i] < v) i++;
+		while (tab[j] > v) j--;
+
+		if (i <= j) {
+			temp = tab[i];
+			tab[i] = tab[j];
+			tab[j] = temp;
+			i++;
+			j--;
+		}
+	} while (i <= j);
+
+	if (j > n) quick_sort(tab, n, j);
+	if (i < m) quick_sort(tab, i, m);
+}
+
