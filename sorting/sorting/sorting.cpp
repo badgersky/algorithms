@@ -63,3 +63,16 @@ void quick_sort(int* tab, int n, int m) {
 	if (i < m) quick_sort(tab, i, m);
 }
 
+void heap_sort(int* tab, int n) {
+	int temp;
+	build_max_heap(tab, n);
+
+	for (int i = n - 1; i > 0; i--) {
+		temp = tab[0];
+		tab[0] = tab[i];
+		tab[i] = temp;
+
+		n--;
+		max_heapify(tab, 0, n);
+	}
+}

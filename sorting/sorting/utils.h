@@ -16,3 +16,7 @@ void copy_arr(int* tab1, int* tab2, int n);
 int* allocate_mem(int n);
 
 int min(int* tab, int n, int j);
+
+void max_heapify(int* tab, int i, int n);
+
+void build_max_heap(int* tab, int n);

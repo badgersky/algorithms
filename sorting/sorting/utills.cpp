@@ -64,3 +64,31 @@ int min(int* tab, int n, int j) {
 	}
 	return min_i;
 }
+
+void max_heapify(int* tab, int i, int n) {
+	int largest = i;
+	int l = 2 * i + 1;
+	int r = l + 1;
+	int temp;
+
+	if (l < n && tab[l] > tab[largest]) {
+		largest = l;
+	}
+
+	if (r < n && tab[r] > tab[largest]) {
+		largest = r;
+	}
+
+	if (largest != i) {
+		temp = tab[i];
+		tab[i] = tab[largest];
+		tab[largest] = temp;
+		max_heapify(tab, largest, n);
+	}
+}
+
+void build_max_heap(int* tab, int n) {
+	for (int i = n / 2 - 1; i >= 0; i--) {
+		max_heapify(tab, i, n);
+	}
+}
