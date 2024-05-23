@@ -13,3 +13,5 @@ void test_selection_sort(int* tab_asc, int* tab_desc, int* tab, int size);
 void test_quick_sort(int* tab_asc, int* tab_desc, int* tab, int size);
 
 void test_heap_sort(int* tab_asc, int* tab_desc, int* tab, int size);
+
+void test_shell_sort(int* tab_asc, int* tab_desc, int* tab, int size);

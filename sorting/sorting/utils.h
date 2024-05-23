@@ -20,3 +20,5 @@ int min(int* tab, int n, int j);
 void max_heapify(int* tab, int i, int n);
 
 void build_max_heap(int* tab, int n);
+
+void insert_shell_sort(int* tab, int n, int h);

@@ -76,3 +76,16 @@ void heap_sort(int* tab, int n) {
 		max_heapify(tab, 0, n);
 	}
 }
+
+void shell_sort(int* tab, int n) {
+	int h = 1;
+
+	while (h < n / 3) {
+		h = 3 * h + 1;
+	}
+
+	while (h > 0) {
+		insert_shell_sort(tab, n, h);
+		h /= 3;
+	}
+}

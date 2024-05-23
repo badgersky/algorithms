@@ -92,3 +92,14 @@ void build_max_heap(int* tab, int n) {
 		max_heapify(tab, i, n);
 	}
 }
+
+void insert_shell_sort(int* tab, int n, int h) {
+	for (int i = h; i < n; i++) {
+		int temp = tab[i];
+		int j;
+		for (j = i; j >= h && tab[j - h] > temp; j -= h) {
+			tab[j] = tab[j - h];
+		}
+		tab[j] = temp;
+	}
+}

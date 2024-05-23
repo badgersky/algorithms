@@ -118,3 +118,22 @@ void test_heap_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
 
 	free(tab_sort);
 }
+
+void test_shell_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
+	printf("shell sort\n");
+	int* tab_sort = allocate_mem(size);
+
+	// random data
+	copy_arr(tab, tab_sort, size);
+	run_test1(shell_sort, tab_sort, size, 'r');
+
+	// ascending data
+	copy_arr(tab_asc, tab_sort, size);
+	run_test1(shell_sort, tab_sort, size, 'a');
+
+	// descending data
+	copy_arr(tab_desc, tab_sort, size);
+	run_test1(shell_sort, tab_sort, size, 'd');
+
+	free(tab_sort);
+}

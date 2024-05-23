@@ -5,7 +5,7 @@
 int main() {
 	srand(time(0));
 
-	const int size = 40000;
+	const int size = 30000;
 	int *tab = allocate_mem(size);
 	int *tab_asc = allocate_mem(size);
 	int *tab_desc = allocate_mem(size);
@@ -22,6 +22,7 @@ int main() {
 	test_selection_sort(tab_asc, tab_desc, tab, size);
 	test_quick_sort(tab_asc, tab_desc, tab, size);
 	test_heap_sort(tab_asc, tab_desc, tab, size);
+	test_shell_sort(tab_asc, tab_desc, tab, size);
 
 	free(tab);
 	free(tab_asc);
