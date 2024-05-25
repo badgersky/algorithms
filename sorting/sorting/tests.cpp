@@ -10,7 +10,7 @@ void run_test1(void (*func)(int*, int), int* tab, int n, char d_type) {
 	func(tab, n);
 	end = clock();
 	time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	printf("%c\t%d\t%lf\n", d_type, n, time_used);
+	printf("%c\t%d\t%lf\t", d_type, n, time_used);
 }
 
 void run_test2(void (*func)(int*, int, int), int* tab, int n, char d_type) {
@@ -21,11 +21,11 @@ void run_test2(void (*func)(int*, int, int), int* tab, int n, char d_type) {
 	func(tab, 0, n - 1);
 	end = clock();
 	time_used = ((double)(end - start)) / CLOCKS_PER_SEC;
-	printf("%c\t%d\t%lf\n", d_type, n, time_used);
+	printf("%c\t%d\t%lf\t", d_type, n, time_used);
 }
 
 void test_bubble_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
-	printf("bubble sort\n");
+	printf("bubble sort\t");
 	int* tab_sort = allocate_mem(size);
 
 	// random data
@@ -40,11 +40,12 @@ void test_bubble_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
 	copy_arr(tab_desc, tab_sort, size);
 	run_test1(bubble_sort, tab_sort, size, 'd');
 
+	printf("\n");
 	free(tab_sort);
 }
 
 void test_insertion_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
-	printf("insertion sort\n");
+	printf("insertion sort\t");
 	int* tab_sort = allocate_mem(size);
 
 	// random data
@@ -59,11 +60,12 @@ void test_insertion_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
 	copy_arr(tab_desc, tab_sort, size);
 	run_test1(insertion_sort, tab_sort, size, 'd');
 
+	printf("\n");
 	free(tab_sort);
 }
 
 void test_selection_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
-	printf("selection sort\n");
+	printf("selection sort\t");
 	int* tab_sort = allocate_mem(size);
 
 	// random data
@@ -78,11 +80,12 @@ void test_selection_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
 	copy_arr(tab_desc, tab_sort, size);
 	run_test1(selection_sort, tab_sort, size, 'd');
 
+	printf("\n");
 	free(tab_sort);
 }
 
 void test_quick_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
-	printf("quick sort\n");
+	printf("quick sort\t");
 	int* tab_sort = allocate_mem(size);
 
 	// random data
@@ -97,11 +100,12 @@ void test_quick_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
 	copy_arr(tab_desc, tab_sort, size);
 	run_test2(quick_sort, tab_sort, size, 'd');
 
+	printf("\n");
 	free(tab_sort);
 }
 
 void test_heap_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
-	printf("heap sort\n");
+	printf("heap sort\t");
 	int* tab_sort = allocate_mem(size);
 
 	// random data
@@ -116,11 +120,12 @@ void test_heap_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
 	copy_arr(tab_desc, tab_sort, size);
 	run_test1(heap_sort, tab_sort, size, 'd');
 
+	printf("\n");
 	free(tab_sort);
 }
 
 void test_shell_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
-	printf("shell sort\n");
+	printf("shell sort\t");
 	int* tab_sort = allocate_mem(size);
 
 	// random data
@@ -135,5 +140,6 @@ void test_shell_sort(int* tab_asc, int* tab_desc, int* tab, int size) {
 	copy_arr(tab_desc, tab_sort, size);
 	run_test1(shell_sort, tab_sort, size, 'd');
 
+	printf("\n");
 	free(tab_sort);
 }
