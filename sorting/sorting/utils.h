@@ -22,3 +22,7 @@ void max_heapify(int* tab, int i, int n);
 void build_max_heap(int* tab, int n);
 
 void insert_shell_sort(int* tab, int n, int h);
+
+void print_arr(int* tab, int n);
+
+int compare_arr(int* tab1, int* tab2, int n);

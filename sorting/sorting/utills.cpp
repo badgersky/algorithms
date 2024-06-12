@@ -103,3 +103,21 @@ void insert_shell_sort(int* tab, int n, int h) {
 		tab[j] = temp;
 	}
 }
+
+void print_arr(int* tab, int n) {
+	for (int i = 0; i < n; i++) {
+		printf("%d\n", tab[i]);
+	}
+}
+
+int compare_arr(int* tab1, int* tab2, int n) {
+	int res = 1;
+	for (int i = 0; i < n; i++) {
+		if (tab1[i] != tab1[i]) {
+			res = 0;
+			return res;
+		}
+	}
+
+	return res;
+}
